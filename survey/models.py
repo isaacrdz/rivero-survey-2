@@ -87,7 +87,6 @@ class Response(models.Model):
 	comments = models.TextField('Algun comentario por agregar', blank=True, null=True)
 	interview_uuid = models.CharField("Interview unique identifier", max_length=36)
 	#AnswerSelectMultiples = models.ForeignKey('survey.AnswerSelectMultiple', blank=True, related_name='AnswerSelectMultiples_respuesta', null=True)
-
 	def respuesta(obj):
 		return "%s" % AnswerSelectMultiple.objects.filter(pk=obj)
 		respuesta.short_description = "respuesta"

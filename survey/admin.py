@@ -19,6 +19,7 @@ class CategoryInline(admin.TabularInline):
 
 class SurveyAdmin(admin.ModelAdmin):
 	inlines = [CategoryInline, QuestionInline]
+	actions = (export_as_excel, )
 
 class AnswerBaseInline(admin.StackedInline):
 	fields = ('question', 'body')
@@ -41,9 +42,9 @@ class AnswerIntegerInline(AnswerBaseInline):
 	model= AnswerInteger 
 
 class ResponseAdmin(admin.ModelAdmin):
-	list_display = ('interviewer', 'survey', 'created','respuesta') 
+	list_display = ('interviewer', 'survey', 'respuesta') 
 	inlines = [AnswerTextInline, AnswerRadioInline, AnswerSelectInline, AnswerSelectMultipleInline, AnswerIntegerInline]	
-	readonly_fields = ('survey', 'created', 'updated', 'interview_uuid')
+	readonly_fields = ('survey', 'created', 'updated', 'interview_uuid','respuesta')
 	list_filter = ('survey', 'interviewer',)
 	actions = (export_as_excel, )
 
