@@ -10,10 +10,10 @@ body
 
 section.main
 {
-	width: 600px;
-	height: 800px;
+	width: 700px;
+	height: 933px;
 	margin:0 auto ;
-	border:1px solid red;
+	
 	text-align: center;
 	background: url(../img/bg.jpg);
 }
